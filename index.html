@@ -1,137 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Präsio – Social Media für lokale Betriebe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-.pw{font-family:var(--font-sans);color:var(--color-text-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.logo{font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px}
-.logo-icon{width:24px;height:24px;background:#3D1F0D;display:flex;align-items:center;justify-content:center;border-radius:3px}
-.logo-em{color:#8B4513}
-.nav-links{display:flex;gap:12px}
-.nav-links span{font-size:11px;color:var(--color-text-secondary)}
-.nav-cta{background:#3D1F0D;color:#F5ECD7;border:none;padding:7px 14px;font-size:11px;cursor:pointer;font-family:var(--font-sans)}
-.wood-bar{height:2px;background:#8B4513}
-.hero{padding:32px 20px 28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.hero-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#6B3A1F;letter-spacing:1px;text-transform:uppercase;border:0.5px solid #C4956A;padding:4px 8px;margin-bottom:12px;background:#FBF5EE}
-.hero h1{font-size:22px;font-weight:500;line-height:1.25;margin-bottom:10px;color:var(--color-text-primary)}
-.hero h1 strong{font-weight:500;color:#5C2D0A}
-.hero p{font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:16px}
-.hero-btns{display:flex;gap:8px}
-.btn-dark{background:#3D1F0D;color:#F5ECD7;border:none;padding:9px 18px;font-size:12px;cursor:pointer;font-family:var(--font-sans)}
-.btn-outline{background:transparent;color:var(--color-text-primary);border:0.5px solid var(--color-border-primary);padding:9px 18px;font-size:12px;cursor:pointer;font-family:var(--font-sans)}
-.hero-visual{position:relative}
-.hero-main-img{width:100%;aspect-ratio:4/3;background:#EDE0D4;border:0.5px solid #C4956A;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-float{position:absolute;bottom:-14px;left:-16px;width:46%;background:#FBF5EE;border:0.5px solid #C4956A;padding:10px;overflow:hidden}
-.metric-num{font-size:18px;font-weight:500;color:#3D1F0D;line-height:1}
-.metric-lbl{font-size:10px;color:#5C2D0A}
-.section{padding:28px 20px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#8B4513;margin-bottom:4px;display:flex;align-items:center;gap:6px}
-.eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:#8B4513}
-.section h2{font-size:18px;font-weight:500;margin-bottom:6px}
-.section-sub{font-size:12px;color:var(--color-text-secondary);margin-bottom:16px;line-height:1.6}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.step{padding:14px 12px;border:0.5px solid var(--color-border-tertiary);margin-right:-0.5px;background:var(--color-background-primary)}
-.step-num{font-size:10px;color:#8B4513;margin-bottom:8px;font-weight:500}
-.step-icon{width:32px;height:32px;background:#FBF5EE;border:0.5px solid #D4A574;display:flex;align-items:center;justify-content:center;margin-bottom:8px;color:#5C2D0A;font-size:16px}
-.step h3{font-size:12px;font-weight:500;margin-bottom:4px}
-.step p{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
-.who-section{background:#FAF6F1;padding:24px 20px;border-top:0.5px solid #D4A574;border-bottom:0.5px solid #D4A574}
-.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.who-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary)}
-.who-img{height:80px;background:#EDE0D4;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:center;position:relative}
-.who-tag{position:absolute;top:6px;right:6px;font-size:9px;background:#3D1F0D;color:#F5ECD7;padding:2px 6px}
-.who-body{padding:8px}
-.who-body h3{font-size:12px;font-weight:500;margin-bottom:3px}
-.who-body p{font-size:11px;color:var(--color-text-secondary);line-height:1.4}
-.pricing-section{padding:28px 20px;background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px}
-.price-card{padding:16px 14px;border:0.5px solid var(--color-border-tertiary);margin-right:-0.5px;background:var(--color-background-primary)}
-.price-card.featured{background:#3D1F0D;border-color:#3D1F0D;color:#F5ECD7}
-.feat-label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-secondary);margin-bottom:8px;display:block}
-.price-card.featured .feat-label{color:#C4956A}
-.price-name{font-size:14px;font-weight:500}
-.price-amount{font-size:24px;font-weight:500;margin:6px 0 2px;line-height:1}
-.price-amount span{font-size:12px;font-weight:400;opacity:0.7}
-.price-sub{font-size:11px;color:var(--color-text-secondary);margin-bottom:10px;padding-bottom:10px;border-bottom:0.5px solid var(--color-border-tertiary)}
-.price-card.featured .price-sub{color:#C4956A;border-color:rgba(255,255,255,0.15)}
-.price-feat{list-style:none;display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
-.price-feat li{font-size:11px;color:var(--color-text-secondary);display:flex;gap:6px;align-items:flex-start}
-.price-feat li i{color:#8B4513;flex-shrink:0}
-.price-card.featured .price-feat li{color:#D4A574}
-.price-card.featured .price-feat li i{color:#C4956A}
-.price-btn{width:100%;padding:9px;font-size:12px;cursor:pointer;font-family:var(--font-sans)}
-.btn-light{background:#F5ECD7;color:#3D1F0D;border:none}
-.btn-dark-outline{background:transparent;color:var(--color-text-primary);border:0.5px solid var(--color-border-primary)}
-.trust-section{padding:24px 20px;background:#FAF6F1;border-bottom:0.5px solid #D4A574}
-.trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:14px}
-.trust-stat{padding:12px;border-right:0.5px solid #D4A574;text-align:center}
-.trust-stat:last-child{border-right:none}
-.trust-num{font-size:22px;font-weight:500;color:#3D1F0D}
-.trust-lbl{font-size:10px;color:var(--color-text-secondary);margin-top:3px;line-height:1.3}
-.testimonial-section{padding:28px 20px;background:var(--color-background-primary);border-bottom:0.5px solid var(--color-border-tertiary)}
-.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.testimonial{padding:14px;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.testimonial-text{font-size:11px;color:var(--color-text-secondary);line-height:1.6;font-style:italic;margin-bottom:10px}
-.author{display:flex;align-items:center;gap:8px}
-.avatar{width:26px;height:26px;background:#EDE0D4;border:0.5px solid #C4956A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.author-name{font-size:11px;font-weight:500}
-.author-role{font-size:10px;color:var(--color-text-secondary)}
-.cta-section{padding:32px 20px;background:#3D1F0D;text-align:center}
-.cta-section h2{font-size:20px;font-weight:500;color:#F5ECD7;margin-bottom:8px}
-.cta-section p{font-size:12px;color:#C4956A;margin-bottom:16px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.6}
-.cta-btns{display:flex;gap:10px;justify-content:center}
-.btn-cream{background:#F5ECD7;color:#3D1F0D;border:none;padding:10px 20px;font-size:12px;cursor:pointer;font-family:var(--font-sans)}
-.btn-ghost{background:transparent;color:#F5ECD7;border:0.5px solid rgba(245,236,215,0.4);padding:10px 20px;font-size:12px;cursor:pointer;font-family:var(--font-sans)}
-.footer{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;border-top:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary)}
-.footer-logo{font-size:14px;font-weight:500}
-.footer p{font-size:11px;color:var(--color-text-secondary)}
-</style>
+    /* ── Tokens ── */
+    :root {
+      --font: 'DM Sans', sans-serif;
+      --bg:        #ffffff;
+      --bg-warm:   #FAF6F1;
+      --text:      #1a1a18;
+      --text-muted:#6b6b65;
+      --border:    rgba(0,0,0,0.12);
+      --border-warm:#D4A574;
+      --brown-dark: #3D1F0D;
+      --brown-mid:  #5C2D0A;
+      --brown-light:#8B4513;
+      --brown-tan:  #C4956A;
+      --cream:      #F5ECD7;
+      --cream-light:#FBF5EE;
+      --cream-mid:  #EDE0D4;
+    }
 
-<h2 class="sr-only">Präsio Website Vorschau — Social-Media-Service für lokale Unternehmen</h2>
+    body { font-family: var(--font); color: var(--text); background: var(--bg); }
 
-<div class="pw">
+    /* ── Nav ── */
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 0.5px solid var(--border);
+      background: var(--bg);
+    }
+    .logo { font-size: 20px; font-weight: 500; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+    .logo-icon { width: 28px; height: 28px; background: var(--brown-dark); display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+    .logo-icon svg { width: 16px; height: 16px; }
+    .logo-text em { font-style: normal; color: var(--brown-light); }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; cursor: pointer; }
+    .nav-cta {
+      background: var(--brown-dark); color: var(--cream);
+      border: none; padding: 9px 20px;
+      font-size: 13px; cursor: pointer; font-family: var(--font); letter-spacing: 0.3px;
+    }
+    .wood-bar { height: 2px; background: var(--brown-light); width: 100%; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 4rem 2rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; color: #6B3A1F; letter-spacing: 1px; text-transform: uppercase;
+      border: 0.5px solid var(--brown-tan); padding: 5px 10px;
+      margin-bottom: 1.5rem; background: var(--cream-light);
+    }
+    .hero h1 { font-size: 34px; font-weight: 500; line-height: 1.2; margin-bottom: 1.25rem; }
+    .hero h1 strong { font-weight: 500; color: var(--brown-mid); }
+    .hero p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; max-width: 420px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-dark { background: var(--brown-dark); color: var(--cream); border: none; padding: 13px 26px; font-size: 14px; cursor: pointer; font-family: var(--font); }
+    .btn-outline { background: transparent; color: var(--text); border: 0.5px solid rgba(0,0,0,0.35); padding: 13px 26px; font-size: 14px; cursor: pointer; font-family: var(--font); }
+
+    .hero-visual { position: relative; }
+    .hero-img-main { width: 100%; aspect-ratio: 4/3; background: var(--cream-mid); overflow: hidden; border: 0.5px solid var(--brown-tan); }
+    .hero-img-float {
+      position: absolute; bottom: -20px; left: -24px; width: 48%; aspect-ratio: 1;
+      background: var(--cream-light); border: 0.5px solid var(--brown-tan);
+      display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+      padding: 1rem; overflow: hidden;
+    }
+    .metric-num { font-size: 22px; font-weight: 500; color: var(--brown-dark); line-height: 1; }
+    .metric-float { font-size: 11px; color: var(--brown-mid); font-weight: 500; }
+
+    /* ── Sections ── */
+    .section { padding: 4rem 2rem; }
+    .section-header { margin-bottom: 2.5rem; }
+    .eyebrow {
+      font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--brown-light); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--brown-light); }
+    .section-header h2 { font-size: 26px; font-weight: 500; line-height: 1.3; }
+    .section-header p { font-size: 15px; color: var(--text-muted); margin-top: 0.5rem; max-width: 500px; line-height: 1.7; }
+
+    /* ── Steps ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .step { padding: 1.75rem 1.5rem; border: 0.5px solid var(--border); margin-right: -0.5px; background: var(--bg); }
+    .step-num { font-size: 11px; color: var(--brown-light); margin-bottom: 1rem; font-weight: 500; letter-spacing: 0.5px; }
+    .step-icon { width: 40px; height: 40px; background: var(--cream-light); border: 0.5px solid var(--border-warm); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--brown-mid); font-size: 20px; }
+    .step h3 { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .step p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Who ── */
+    .who-section { background: var(--bg-warm); padding: 4rem 2rem; border-top: 0.5px solid var(--border-warm); border-bottom: 0.5px solid var(--border-warm); }
+    .who-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 2rem; }
+    .who-card { background: var(--bg); border: 0.5px solid var(--border); overflow: hidden; }
+    .who-img { height: 120px; background: var(--cream-mid); border-bottom: 0.5px solid var(--border); position: relative; }
+    .who-body { padding: 1rem; }
+    .who-body h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .who-body p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .who-tag { position: absolute; top: 8px; right: 8px; font-size: 10px; background: var(--brown-dark); color: var(--cream); padding: 3px 8px; }
+
+    /* ── Pricing ── */
+    .pricing-section { padding: 4rem 2rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2rem; }
+    .price-card { padding: 2rem 1.5rem; border: 0.5px solid var(--border); margin-right: -0.5px; background: var(--bg); }
+    .price-card.featured { background: var(--brown-dark); border-color: var(--brown-dark); }
+    .feat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 1rem; display: block; }
+    .price-card.featured .feat-label { color: var(--brown-tan); }
+    .price-name { font-size: 16px; font-weight: 500; margin-bottom: 0.25rem; }
+    .price-card.featured .price-name { color: var(--cream); }
+    .price-amount { font-size: 30px; font-weight: 500; margin: 0.75rem 0 0.25rem; line-height: 1; }
+    .price-card.featured .price-amount { color: var(--cream); }
+    .price-amount span { font-size: 13px; font-weight: 400; opacity: 0.7; }
+    .price-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 0.5px solid var(--border); }
+    .price-card.featured .price-sub { color: var(--brown-tan); border-color: rgba(255,255,255,0.15); }
+    .price-feat { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
+    .price-feat li { font-size: 12px; color: var(--text-muted); display: flex; gap: 8px; align-items: flex-start; }
+    .price-feat li i { color: var(--brown-light); flex-shrink: 0; margin-top: 1px; }
+    .price-card.featured .price-feat li { color: #D4B896; }
+    .price-card.featured .price-feat li i { color: var(--brown-tan); }
+    .price-btn { width: 100%; padding: 12px; font-size: 13px; cursor: pointer; font-family: var(--font); letter-spacing: 0.3px; border: none; }
+    .price-card:not(.featured) .price-btn { background: transparent; color: var(--text); border: 0.5px solid rgba(0,0,0,0.35); }
+    .price-card.featured .price-btn { background: #F5ECD7 !important; color: #3D1F0D !important; border: none !important; }
+
+    /* ── Trust ── */
+    .trust-section { padding: 3rem 2rem; background: var(--bg-warm); border-top: 0.5px solid var(--border-warm); }
+    .trust-grid { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 2rem; }
+    .trust-stat { padding: 1.5rem; border-right: 0.5px solid var(--border-warm); text-align: center; }
+    .trust-stat:last-child { border-right: none; }
+    .trust-num { font-size: 30px; font-weight: 500; color: var(--brown-dark); }
+    .trust-lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+
+    /* ── Testimonials ── */
+    .testimonial-section { padding: 4rem 2rem; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 2rem; }
+    .testimonial { padding: 1.5rem; border: 0.5px solid var(--border); background: var(--bg); }
+    .testimonial-text { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 32px; height: 32px; background: var(--cream-mid); border: 0.5px solid var(--brown-tan); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .author-name { font-size: 12px; font-weight: 500; }
+    .author-role { font-size: 11px; color: var(--text-muted); }
+
+    /* ── CTA ── */
+    .cta-section { padding: 5rem 2rem; background: var(--brown-dark); text-align: center; }
+    .cta-section h2 { font-size: 28px; font-weight: 500; color: var(--cream); margin-bottom: 1rem; }
+    .cta-section p { font-size: 15px; color: var(--brown-tan); margin-bottom: 2rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-cream { background: #F5ECD7 !important; color: #3D1F0D !important; border: none !important; padding: 14px 28px; font-size: 14px; cursor: pointer; font-family: var(--font); }
+    .btn-ghost { background: transparent !important; color: #F5ECD7 !important; border: 1px solid rgba(245,236,215,0.5) !important; padding: 14px 28px; font-size: 14px; cursor: pointer; font-family: var(--font); }
+
+    /* ── Footer ── */
+    .footer { padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 0.5px solid var(--border); }
+    .footer-logo { font-size: 16px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+    .footer-logo em { font-style: normal; color: var(--brown-light); }
+    .footer p { font-size: 12px; color: var(--text-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-img-float { display: none; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
 
 <nav class="nav">
   <div class="logo">
     <div class="logo-icon">
-      <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><rect x="2" y="2" width="5" height="5" fill="#C4956A"/><rect x="9" y="2" width="5" height="5" fill="#C4956A" opacity="0.6"/><rect x="2" y="9" width="5" height="5" fill="#C4956A" opacity="0.6"/><rect x="9" y="9" width="5" height="5" fill="#F5ECD7"/></svg>
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="5" height="5" fill="#C4956A"/>
+        <rect x="9" y="2" width="5" height="5" fill="#C4956A" opacity="0.6"/>
+        <rect x="2" y="9" width="5" height="5" fill="#C4956A" opacity="0.6"/>
+        <rect x="9" y="9" width="5" height="5" fill="#F5ECD7"/>
+      </svg>
     </div>
-    Prä<span class="logo-em">sio</span>
+    <div class="logo-text">Prä<em>sio</em></div>
   </div>
   <div class="nav-links">
-    <span>How it works</span>
-    <span>Who we serve</span>
-    <span>Pricing</span>
+    <a href="#how">How it works</a>
+    <a href="#who">Who we serve</a>
+    <a href="#pricing">Pricing</a>
   </div>
   <button class="nav-cta">Book a free call</button>
 </nav>
 <div class="wood-bar"></div>
 
+<!-- Hero -->
 <div class="hero">
-  <div>
-    <div class="hero-tag"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:10px"></i>Köln · Bonn · Niederkassel</div>
+  <div class="hero-left">
+    <div class="hero-tag"><i class="ti ti-map-pin" aria-hidden="true" style="font-size:11px"></i>Köln · Bonn · Niederkassel</div>
     <h1>Your business,<br><strong>seen by more people</strong><br>every month</h1>
     <p>We manage your social media so you don't have to. Professional posts, real engagement, fixed monthly price — no agency overhead.</p>
     <div class="hero-btns">
-      <button class="btn-dark" onclick="sendPrompt('Tell me more about Präsio and how to get started')">Get started ↗</button>
+      <button class="btn-dark">Get started ↗</button>
       <button class="btn-outline">See pricing</button>
     </div>
   </div>
   <div class="hero-visual">
-    <div class="hero-main-img">
+    <div class="hero-img-main">
       <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
         <rect width="400" height="300" fill="#EDE0D4"/>
         <rect x="0" y="250" width="400" height="50" fill="#D4B59A"/>
         <rect x="60" y="140" width="80" height="110" fill="#5C2D0A" rx="2"/>
         <rect x="75" y="155" width="20" height="25" fill="#EDE0D4" opacity="0.4"/>
-        <rect x="105" y="155" width="20" height="25" fill="#EDE0D4" opacity="0.4"/>
+        <rect x="105" y="155" width="20" height="25" fill="#EDE0D0" opacity="0.4"/>
         <rect x="75" y="195" width="50" height="55" fill="#3D1F0D"/>
+        <rect x="90" y="210" width="20" height="40" fill="#EDE0D4" opacity="0.3"/>
         <rect x="160" y="110" width="100" height="140" fill="#3D1F0D" rx="2"/>
         <rect x="170" y="125" width="35" height="30" fill="#EDE0D4" opacity="0.4"/>
-        <rect x="215" y="125" width="35" height="30" fill="#EDE0D4" opacity="0.4"/>
+        <rect x="215" y="125" width="35" height="30" fill="#EDE0D0" opacity="0.4"/>
         <rect x="175" y="170" width="60" height="80" fill="#5C2D0A"/>
+        <rect x="192" y="190" width="25" height="60" fill="#EDE0D4" opacity="0.3"/>
         <rect x="280" y="155" width="65" height="95" fill="#5C2D0A" rx="2"/>
         <rect x="290" y="168" width="18" height="20" fill="#EDE0D4" opacity="0.4"/>
         <rect x="318" y="168" width="18" height="20" fill="#EDE0D4" opacity="0.4"/>
+        <rect x="292" y="200" width="40" height="50" fill="#3D1F0D"/>
+        <rect x="304" y="218" width="16" height="32" fill="#EDE0D4" opacity="0.3"/>
+        <rect x="100" y="90" width="8" height="50" fill="#8B6347"/>
+        <rect x="90" y="85" width="28" height="12" fill="#5C3D20"/>
+        <rect x="200" y="60" width="10" height="50" fill="#8B6347"/>
+        <rect x="188" y="54" width="34" height="14" fill="#5C3D20"/>
+        <rect x="295" y="100" width="7" height="55" fill="#8B6347"/>
+        <rect x="285" y="95" width="27" height="12" fill="#5C3D20"/>
         <circle cx="350" cy="60" r="35" fill="#C4956A" opacity="0.25"/>
         <text x="335" y="55" font-size="11" fill="#5C2D0A" font-family="sans-serif" font-weight="500">3.2K</text>
         <text x="330" y="68" font-size="9" fill="#8B4513" font-family="sans-serif">followers</text>
@@ -140,85 +248,89 @@
         <text x="38" y="95" font-size="8" fill="#8B4513" font-family="sans-serif">this month</text>
       </svg>
     </div>
-    <div class="hero-float">
+    <div class="hero-img-float">
+      <svg width="100%" height="70%" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="160" fill="#FBF5EE"/>
+        <rect x="10" y="100" width="140" height="50" fill="#EDE0D4"/>
+        <rect x="20" y="50" width="35" height="60" fill="#8B6347"/>
+        <rect x="27" y="58" width="10" height="12" fill="#FBF5EE" opacity="0.5"/>
+        <rect x="40" y="58" width="10" height="12" fill="#FBF5EE" opacity="0.5"/>
+        <rect x="27" y="78" width="22" height="32" fill="#5C3D20"/>
+        <rect x="65" y="30" width="45" height="80" fill="#5C2D0A"/>
+        <rect x="73" y="42" width="14" height="14" fill="#FBF5EE" opacity="0.4"/>
+        <rect x="93" y="42" width="14" height="14" fill="#FBF5EE" opacity="0.4"/>
+        <rect x="73" y="65" width="28" height="45" fill="#3D1F0D"/>
+        <rect x="115" y="65" width="30" height="45" fill="#8B6347"/>
+        <rect x="122" y="72" width="10" height="10" fill="#FBF5EE" opacity="0.4"/>
+        <rect x="122" y="88" width="16" height="22" fill="#5C3D20"/>
+      </svg>
       <div class="metric-num">94%</div>
-      <div class="metric-lbl">client satisfaction</div>
+      <div class="metric-float">client satisfaction</div>
     </div>
   </div>
 </div>
 
-<div class="section">
-  <div class="eyebrow">How it works</div>
-  <h2>From onboarding to posting in 4 steps</h2>
-  <div class="section-sub">No marketing knowledge needed. We handle everything after one short call.</div>
+<!-- How it works -->
+<div class="section" id="how">
+  <div class="section-header">
+    <div class="eyebrow">How it works</div>
+    <h2>From onboarding to posting in 4 steps</h2>
+    <p>No marketing knowledge needed. We handle everything after one short call.</p>
+  </div>
   <div class="steps-grid">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-icon"><i class="ti ti-user-check" aria-hidden="true"></i></div>
-      <h3>We learn your brand</h3>
-      <p>A 30-minute interview + your website gives us everything we need.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-icon"><i class="ti ti-wand" aria-hidden="true"></i></div>
-      <h3>We create content</h3>
-      <p>AI generates 8–16 ready posts per month — text, images, hashtags.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-icon"><i class="ti ti-circle-check" aria-hidden="true"></i></div>
-      <h3>You approve</h3>
-      <p>One click to approve — we handle scheduling and publishing.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
-      <h3>We report results</h3>
-      <p>Monthly reports track reach and growth.</p>
-    </div>
+    <div class="step"><div class="step-num">01</div><div class="step-icon"><i class="ti ti-user-check" aria-hidden="true"></i></div><h3>We learn your brand</h3><p>A 30-minute interview + your website gives us everything we need — your tone, goals, and story.</p></div>
+    <div class="step"><div class="step-num">02</div><div class="step-icon"><i class="ti ti-wand" aria-hidden="true"></i></div><h3>We create content</h3><p>AI generates 8–16 ready posts per month — text, image ideas, hashtags, and best posting times.</p></div>
+    <div class="step"><div class="step-num">03</div><div class="step-icon"><i class="ti ti-circle-check" aria-hidden="true"></i></div><h3>You approve</h3><p>Review posts in a simple dashboard. One click to approve — we handle scheduling and publishing.</p></div>
+    <div class="step"><div class="step-num">04</div><div class="step-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div><h3>We report results</h3><p>Monthly reports track your reach and growth. Quarterly calls keep the strategy on point.</p></div>
   </div>
 </div>
 
-<div class="who-section">
-  <div class="eyebrow">Who we serve</div>
-  <h2>Built for local businesses like yours</h2>
-  <div class="section-sub">We focus on the Cologne–Bonn–Niederkassel region — in-person onboarding available.</div>
+<!-- Who we serve -->
+<div class="who-section" id="who">
+  <div class="section-header">
+    <div class="eyebrow">Who we serve</div>
+    <h2>Built for local businesses like yours</h2>
+    <p>We focus on the Cologne–Bonn–Niederkassel region — in-person onboarding available.</p>
+  </div>
   <div class="who-grid">
     <div class="who-card">
       <div class="who-img">
-        <i class="ti ti-tools" aria-hidden="true" style="font-size:28px;color:#5C2D0A;opacity:0.5"></i>
+        <svg width="100%" height="100%" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#EDE0D4"/><rect x="0" y="90" width="160" height="30" fill="#D4B59A"/><rect x="55" y="30" width="50" height="60" fill="#5C2D0A"/><rect x="62" y="40" width="14" height="16" fill="#EDE0D4" opacity="0.5"/><rect x="84" y="40" width="14" height="16" fill="#EDE0D4" opacity="0.5"/><rect x="66" y="65" width="28" height="25" fill="#3D1F0D"/><rect x="20" y="50" width="28" height="40" fill="#8B6347"/><rect x="112" y="55" width="28" height="35" fill="#8B6347"/><rect x="68" y="15" width="24" height="20" fill="#8B4513"/></svg>
         <div class="who-tag">Craftsmen</div>
       </div>
-      <div class="who-body"><h3>Trades & handwerk</h3><p>Attract customers and new workers.</p></div>
+      <div class="who-body"><h3>Trades & handwerk</h3><p>Attract customers and new workers with targeted recruiting posts.</p></div>
     </div>
     <div class="who-card">
       <div class="who-img">
-        <i class="ti ti-tools-kitchen-2" aria-hidden="true" style="font-size:28px;color:#5C2D0A;opacity:0.5"></i>
+        <svg width="100%" height="100%" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#EDE0D4"/><rect x="0" y="90" width="160" height="30" fill="#D4B59A"/><rect x="40" y="25" width="80" height="65" fill="#5C2D0A"/><rect x="50" y="35" width="22" height="20" fill="#EDE0D4" opacity="0.4"/><rect x="78" y="35" width="22" height="20" fill="#EDE0D4" opacity="0.4"/><rect x="48" y="65" width="64" height="25" fill="#3D1F0D"/><rect x="60" y="10" width="40" height="18" fill="#8B4513"/><rect x="15" y="55" width="20" height="35" fill="#8B6347"/><rect x="125" y="55" width="20" height="35" fill="#8B6347"/></svg>
         <div class="who-tag">Gastro</div>
       </div>
-      <div class="who-body"><h3>Restaurants & cafés</h3><p>Show off your dishes to hungry customers.</p></div>
+      <div class="who-body"><h3>Restaurants & cafés</h3><p>Show off your dishes and atmosphere to hungry customers nearby.</p></div>
     </div>
     <div class="who-card">
       <div class="who-img">
-        <i class="ti ti-scissors" aria-hidden="true" style="font-size:28px;color:#5C2D0A;opacity:0.5"></i>
+        <svg width="100%" height="100%" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#EDE0D4"/><rect x="0" y="90" width="160" height="30" fill="#D4B59A"/><ellipse cx="55" cy="55" rx="22" ry="30" fill="#5C2D0A"/><ellipse cx="55" cy="35" rx="12" ry="14" fill="#8B6347"/><rect x="33" y="65" width="44" height="25" fill="#3D1F0D"/><ellipse cx="105" cy="50" rx="20" ry="28" fill="#5C2D0A"/><ellipse cx="105" cy="32" rx="11" ry="13" fill="#8B6347"/><rect x="85" y="62" width="40" height="28" fill="#3D1F0D"/></svg>
         <div class="who-tag">Services</div>
       </div>
-      <div class="who-body"><h3>Local services</h3><p>Hairdressers, fitness, cosmetics.</p></div>
+      <div class="who-body"><h3>Local services</h3><p>Hairdressers, fitness, cosmetics — build a loyal local following.</p></div>
     </div>
     <div class="who-card">
       <div class="who-img">
-        <i class="ti ti-shopping-bag" aria-hidden="true" style="font-size:28px;color:#5C2D0A;opacity:0.5"></i>
+        <svg width="100%" height="100%" viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="120" fill="#EDE0D4"/><rect x="0" y="90" width="160" height="30" fill="#D4B59A"/><rect x="20" y="30" width="120" height="60" fill="#5C2D0A"/><rect x="28" y="38" width="28" height="28" fill="#EDE0D4" opacity="0.5"/><rect x="62" y="38" width="28" height="28" fill="#EDE0D4" opacity="0.4"/><rect x="96" y="38" width="36" height="28" fill="#EDE0D4" opacity="0.3"/><rect x="28" y="72" width="104" height="12" fill="#3D1F0D"/><rect x="20" y="20" width="120" height="12" fill="#3D1F0D"/><rect x="55" y="23" width="50" height="6" fill="#C4956A" opacity="0.5"/></svg>
         <div class="who-tag">Retail</div>
       </div>
-      <div class="who-body"><h3>Retail & boutiques</h3><p>Drive foot traffic and online awareness.</p></div>
+      <div class="who-body"><h3>Retail & boutiques</h3><p>Drive foot traffic and online awareness for your shop.</p></div>
     </div>
   </div>
 </div>
 
-<div class="pricing-section">
-  <div class="eyebrow">Pricing</div>
-  <h2>Simple, fixed monthly prices</h2>
-  <div class="section-sub">No hourly rates, no hidden costs. One-time setup fee of €99, then a flat monthly package.</div>
+<!-- Pricing -->
+<div class="pricing-section" id="pricing">
+  <div class="section-header">
+    <div class="eyebrow">Pricing</div>
+    <h2>Simple, fixed monthly prices</h2>
+    <p>No hourly rates, no hidden costs. One-time setup fee of €99, then a flat monthly package.</p>
+  </div>
   <div class="pricing-grid">
     <div class="price-card">
       <span class="feat-label">Starter</span>
@@ -229,9 +341,10 @@
         <li><i class="ti ti-check" aria-hidden="true"></i>8 posts per month</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>1 platform</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>AI-generated visuals</li>
+        <li><i class="ti ti-check" aria-hidden="true"></i>Quarterly report</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>Email support</li>
       </ul>
-      <button class="price-btn btn-dark-outline">Get started</button>
+      <button class="price-btn">Get started</button>
     </div>
     <div class="price-card featured">
       <span class="feat-label">Most popular</span>
@@ -239,12 +352,13 @@
       <div class="price-amount">€349<span>/mo</span></div>
       <div class="price-sub">For growing businesses · 3 months min.</div>
       <ul class="price-feat">
-        <li><i class="ti ti-check" aria-hidden="true"></i>12 posts + 2 Reels</li>
+        <li><i class="ti ti-check" aria-hidden="true"></i>12 posts + 2 Reels concepts</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>2 platforms</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>2 custom graphics</li>
+        <li><i class="ti ti-check" aria-hidden="true"></i>Auto-posting included</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>WhatsApp support</li>
       </ul>
-      <button class="price-btn btn-light">Get started</button>
+      <button class="price-btn">Get started</button>
     </div>
     <div class="price-card">
       <span class="feat-label">Premium</span>
@@ -254,67 +368,77 @@
       <ul class="price-feat">
         <li><i class="ti ti-check" aria-hidden="true"></i>16 posts + 4 Reels + Stories</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>3 platforms incl. LinkedIn</li>
+        <li><i class="ti ti-check" aria-hidden="true"></i>Photo briefing</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>Monthly report + call</li>
         <li><i class="ti ti-check" aria-hidden="true"></i>Direct contact line</li>
       </ul>
-      <button class="price-btn btn-dark-outline">Get started</button>
+      <button class="price-btn">Get started</button>
     </div>
   </div>
 </div>
 
+<!-- Trust stats -->
 <div class="trust-section">
-  <div class="eyebrow">Why Präsio</div>
-  <h2>The gap between too expensive and no time</h2>
+  <div class="section-header">
+    <div class="eyebrow">Why Präsio</div>
+    <h2>The gap between too expensive and no time</h2>
+  </div>
   <div class="trust-grid">
     <div class="trust-stat"><div class="trust-num">€200</div><div class="trust-lbl">Starting price per month</div></div>
-    <div class="trust-stat"><div class="trust-num">30 min</div><div class="trust-lbl">All we need from you</div></div>
-    <div class="trust-stat"><div class="trust-num">8–16</div><div class="trust-lbl">Posts per month</div></div>
-    <div class="trust-stat"><div class="trust-num">3</div><div class="trust-lbl">Platforms covered</div></div>
-    <div class="trust-stat"><div class="trust-num">5k+</div><div class="trust-lbl">Local businesses in region</div></div>
+    <div class="trust-stat"><div class="trust-num">30 min</div><div class="trust-lbl">All we need from you to begin</div></div>
+    <div class="trust-stat"><div class="trust-num">8–16</div><div class="trust-lbl">Posts delivered every month</div></div>
+    <div class="trust-stat"><div class="trust-num">3</div><div class="trust-lbl">Platforms we cover</div></div>
+    <div class="trust-stat"><div class="trust-num">5k+</div><div class="trust-lbl">Local businesses in our area</div></div>
   </div>
 </div>
 
+<!-- Testimonials -->
 <div class="testimonial-section">
-  <div class="eyebrow">What clients say</div>
-  <h2>Real results for real businesses</h2>
+  <div class="section-header">
+    <div class="eyebrow">What clients say</div>
+    <h2>Real results for real businesses</h2>
+  </div>
   <div class="testimonial-grid">
     <div class="testimonial">
       <div class="testimonial-text">"Within two months we had three new apprentices reach out through Instagram. Worth every cent."</div>
-      <div class="author">
-        <div class="avatar"><svg width="16" height="16" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
+      <div class="testimonial-author">
+        <div class="author-avatar"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
         <div><div class="author-name">Klaus M.</div><div class="author-role">SHK Betrieb, Troisdorf</div></div>
       </div>
     </div>
     <div class="testimonial">
       <div class="testimonial-text">"I used to spend Sunday evenings stressing about what to post. Now I just approve and it's done."</div>
-      <div class="author">
-        <div class="avatar"><svg width="16" height="16" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
+      <div class="testimonial-author">
+        <div class="author-avatar"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
         <div><div class="author-name">Sara K.</div><div class="author-role">Café owner, Niederkassel</div></div>
       </div>
     </div>
     <div class="testimonial">
       <div class="testimonial-text">"Our reach tripled in three months. The posts actually sound like us — not like a robot wrote them."</div>
-      <div class="author">
-        <div class="avatar"><svg width="16" height="16" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
+      <div class="testimonial-author">
+        <div class="author-avatar"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="6" r="4" fill="#8B6347"/><ellipse cx="9" cy="15" rx="6" ry="4" fill="#8B6347"/></svg></div>
         <div><div class="author-name">Marco B.</div><div class="author-role">Elektriker, Siegburg</div></div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- CTA -->
 <div class="cta-section">
   <h2>Let's put your business on the map</h2>
   <p>Book a free 15-minute call. No commitment, just an honest look at what we can do for you.</p>
   <div class="cta-btns">
-    <button class="btn-cream" onclick="sendPrompt('How do I book a free call with Präsio?')">Book a free call ↗</button>
+    <button class="btn-cream">Book a free call ↗</button>
     <button class="btn-ghost">View pricing</button>
   </div>
 </div>
 
+<!-- Footer -->
 <footer class="footer">
-  <div class="footer-logo">Prä<span class="logo-em">sio</span></div>
+  <div class="footer-logo">Prä<em>sio</em></div>
   <p>Social media for local businesses · Köln–Bonn–Niederkassel</p>
   <p>© 2026 Präsio</p>
 </footer>
 
-</div>
+</body>
+</html>
